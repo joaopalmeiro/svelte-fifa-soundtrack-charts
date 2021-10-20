@@ -8,6 +8,7 @@
   import { maxBy, partialRight, uniqBy } from 'lodash';
 
   export let data;
+
   let width = 500;
   let height = 200;
   const padding = { top: 20, right: 15, bottom: 20, left: 25 };
@@ -19,11 +20,11 @@
 
   // console.log(data);
   const dataToPlot = from(data).groupby('GAME', 'LIST').count().objects();
-  console.log(dataToPlot);
+  // console.log(dataToPlot);
 
   const xTicks = uniqX(data).map(xAccessor);
   const yMax = yAccessor(maxBy(dataToPlot, yAccessor));
-  console.log(xTicks, xTicks.length);
+  // console.log(xTicks, xTicks.length);
   // console.log(yMax);
 
   $: innerWidth = width - (padding.left + padding.right);
@@ -38,7 +39,7 @@
     .range([height - padding.bottom, padding.top]);
 </script>
 
-<h2>Teamed/Grouped bar chart</h2>
+<h2>Teamed bar chart</h2>
 <div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
   <svg xmlns="http://www.w3.org/2000/svg">
     <!-- <rect width="100%" height="100%" fill="crimson" /> -->

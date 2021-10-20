@@ -4,6 +4,11 @@ FIFA soundtrack visualizations built with Svelte.
 
 ## Quickstart
 
+> Python
+
+- `pipenv install --python 3.6`.
+- `pipenv shell`.
+
 > Svelte
 
 - `npm install`.
