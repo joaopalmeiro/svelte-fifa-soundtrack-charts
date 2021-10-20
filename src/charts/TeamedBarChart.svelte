@@ -5,7 +5,7 @@
   // - https://github.com/d3/d3-scale
   import { from } from 'arquero';
   import { scaleLinear } from 'd3-scale';
-  import { maxBy, partialRight, uniqBy } from 'lodash';
+  import { filter, maxBy, partialRight, uniqBy } from 'lodash';
 
   export let data;
 
@@ -16,14 +16,18 @@
   const xAccessor = (d) => d.LIST;
   const yearAccessor = (d) => d.GAME;
   const yAccessor = (d) => d.count;
+
   const uniqX = partialRight(uniqBy, xAccessor);
+  // const uniqYear = partialRight(uniqBy, yearAccessor);
 
   // console.log(data);
   const dataToPlot = from(data).groupby('GAME', 'LIST').count().objects();
   // console.log(dataToPlot);
 
   const xTicks = uniqX(data).map(xAccessor);
+  // const annotations = uniqYear(data).map(yearAccessor);
   const yMax = yAccessor(maxBy(dataToPlot, yAccessor));
+  // console.log(annotations);
   // console.log(xTicks, xTicks.length);
   // console.log(yMax);
 
@@ -63,6 +67,7 @@
       {/each}
     </g>
 
+    <!-- Bars -->
     <g class="bars" transform="translate({barWidth / 6}, 0)">
       {#each dataToPlot as datum}
         <rect
@@ -70,12 +75,44 @@
           y={yScale(yAccessor(datum))}
           width={barWidth / 2}
           height={yScale(0) - yScale(yAccessor(datum))}
-          fill={xAccessor(datum) === 'FIFA' ? '#333333' : '#9A9285'}
+          fill={xAccessor(datum) === xTicks[0] ? '#333333' : '#9A9285'}
           opacity={yearAccessor(datum) === 'FIFA 21' ? '1' : 0.25}
           transform={yearAccessor(datum) === 'FIFA 21'
             ? `translate(${barWidth / 6}, 0)`
             : `translate(0, 0)`}
         />
+      {/each}
+    </g>
+
+    <!-- Annotations -->
+    <g>
+      {#each filter(dataToPlot, ['LIST', xTicks[0]]) as datum}
+        <line
+          x1={yearAccessor(datum) === 'FIFA 20'
+            ? barWidth / (6 * 2) + barWidth / 6 + padding.left
+            : barWidth / 2 + barWidth / (6 * 2) + padding.left}
+          y1={yScale(yAccessor(datum))}
+          x2={yearAccessor(datum) === 'FIFA 20'
+            ? barWidth / (6 * 2) + barWidth / 6 + padding.left
+            : barWidth / 2 + barWidth / (6 * 2) + padding.left}
+          y2={yScale(yAccessor(datum)) - 20}
+          stroke="#333333"
+          stroke-width="0.5px"
+          stroke-opacity={yearAccessor(datum) === 'FIFA 21' ? '1' : 0.25}
+        />
+
+        <text
+          x={yearAccessor(datum) === 'FIFA 20'
+            ? barWidth / (6 * 2) + barWidth / 6 + padding.left
+            : barWidth / 2 + barWidth / (6 * 2) + padding.left}
+          y={yScale(yAccessor(datum)) - 23}
+          text-anchor="middle"
+          class="tick"
+          fill="#333333"
+          opacity={yearAccessor(datum) === 'FIFA 21' ? '1' : 0.25}
+        >
+          {yearAccessor(datum)}
+        </text>
       {/each}
     </g>
   </svg>
