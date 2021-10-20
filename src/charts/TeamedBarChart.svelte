@@ -43,7 +43,10 @@
     .range([height - padding.bottom, padding.top]);
 </script>
 
+<!-- width: {width}; inner width: {innerWidth}; height: {height} -->
+
 <h2>Teamed bar chart</h2>
+<!-- <div class="chart" bind:clientWidth={width}> -->
 <div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
   <svg xmlns="http://www.w3.org/2000/svg">
     <!-- <rect width="100%" height="100%" fill="crimson" /> -->
@@ -126,6 +129,7 @@
   } */
 
   svg {
+    /* Default size: 300×150 (https://css-tricks.com/scale-svg/) */
     width: 100%;
     height: 200px;
   }
