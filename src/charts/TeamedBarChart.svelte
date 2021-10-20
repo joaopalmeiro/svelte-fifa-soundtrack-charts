@@ -81,21 +81,19 @@
 </div>
 
 <style>
-  .chart {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
   svg {
-    position: relative;
     width: 100%;
     height: 200px;
   }
 
+  h2 {
+    font-family: Helvetica, Arial;
+    margin-bottom: 1rem;
+  }
+
   .tick {
     font-family: Helvetica, Arial;
-    font-size: 0.725em;
+    font-size: 0.725rem;
     font-weight: 200;
   }
 
