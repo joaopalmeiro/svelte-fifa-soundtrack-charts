@@ -6,3 +6,14 @@ FIFA soundtrack visualizations built with Svelte.
 
 - [FIFA 20 Soundtrack](https://www.ea.com/news/fifa-20-soundtrack-volta-football?isLocalized=true) page.
 - [FIFA 21 Soundtrack](https://www.ea.com/en-gb/games/fifa/fifa-21/soundtrack) page.
+- [How to handle environment variables in Python](https://pybit.es/articles/how-to-handle-environment-variables-in-python/) blog post by Bob Belderbos.
+
+## Notes
+
+- [Deta Base](https://docs.deta.sh/docs/base/about):
+  - NoSQL database.
+  - `pipenv install deta`.
+  - The `put` method is the fastest way to store an item in the database.
+  - The `put_many` method puts up to 25 items on a single call.
+  - `key` parameter: ID. It will be automatically generated if not provided.
+  - [HTTP API](https://docs.deta.sh/docs/base/http).
