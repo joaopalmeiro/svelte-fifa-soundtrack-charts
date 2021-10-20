@@ -49,7 +49,7 @@
       {#each yScale.ticks(5) as tick}
         <g class="tick tick-{tick}" transform="translate(0, {yScale(tick)})">
           <line x2="100%" />
-          <text y="-4">{tick}</text>
+          <text y="-5">{tick}{tick === yMax ? ' songs' : ''}</text>
         </g>
       {/each}
     </g>
@@ -58,7 +58,7 @@
     <g class="axis x-axis">
       {#each xTicks as tick, i}
         <g class="tick" transform="translate({xScale(i)}, {height})">
-          <text x={barWidth / 2} y="-4">{tick}</text>
+          <text x={barWidth / 2} y="-5">{tick}</text>
         </g>
       {/each}
     </g>
@@ -82,18 +82,25 @@
 </div>
 
 <style>
+  /* .chart {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  } */
+
   svg {
     width: 100%;
     height: 200px;
   }
 
   h2 {
-    font-family: Helvetica, Arial;
+    font-family: Helvetica, Arial, sans-serif;
     margin-bottom: 1rem;
+    color: #1c1917;
   }
 
   .tick {
-    font-family: Helvetica, Arial;
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 0.725rem;
     font-weight: 200;
   }
