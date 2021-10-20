@@ -19,7 +19,7 @@ FIFA soundtrack visualizations built with Svelte.
   - [HTTP API](https://docs.deta.sh/docs/base/http).
 - [HTTPie](https://httpie.io/):
   - `brew install httpie`.
-  - `https GET https://database.deta.sh/v1/{project_id}/{db_name}/items X-API-Key:{project_key} key=={key}`.
+  - `https -v POST https://database.deta.sh/v1/{project_id}/fifa_soundtrack/query X-API-Key:{project_key} Content-Type:application/json query:='[{"GAME": "FIFA 21"}, {"GAME": "FIFA 20"}]'` (more info [here](https://docs.deta.sh/docs/base/http/#query-items)).
   - `param==value` for URL parameters ([source](https://httpie.io/docs#querystring-parameters)).
   - `Name:Value` for HTTP Headers.
   - [Cheatsheet](https://httpie.io/docs#request-items).
