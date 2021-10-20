@@ -42,11 +42,22 @@
   // console.log(promise);
 </script>
 
-{#await promise}
-  <p>Loading data...</p>
-{:then data}
-  <!-- <pre>{JSON.stringify(data, null, 2)}</pre> -->
-  <Container outline>card content</Container>
-{:catch error}
-  <p style="color: crimson">{error.message}</p>
-{/await}
+<main role="main">
+  {#await promise}
+    <p>Loading data...</p>
+  {:then data}
+    <!-- <pre>{JSON.stringify(data, null, 2)}</pre> -->
+    <Container outline>card content</Container>
+  {:catch error}
+    <p style="color: crimson">{error.message}</p>
+  {/await}
+</main>
+
+<style>
+  :global(html) {
+    /* Source: https://www.swyx.io/css-100-bytes/ */
+    max-width: 70ch;
+    padding: 3em 1em;
+    margin: auto;
+  }
+</style>
