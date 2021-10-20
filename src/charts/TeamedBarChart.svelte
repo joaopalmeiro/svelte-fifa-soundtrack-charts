@@ -133,7 +133,7 @@
   h2 {
     font-family: Helvetica, Arial, sans-serif;
     margin-bottom: 1rem;
-    color: #1c1917;
+    color: #333333;
   }
 
   .tick {

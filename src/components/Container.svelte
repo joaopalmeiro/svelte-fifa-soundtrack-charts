@@ -20,7 +20,8 @@
   }
 
   .container.outline {
-    /* More info: warm-gray, 900 (https://windicss.org/utilities/colors.html) */
-    border: 1px solid #1c1917;
+    /* More info: warm-gray, 300 and 900 (https://windicss.org/utilities/colors.html) */
+    /* border: 1px solid #1c1917; */
+    border: 1px solid #d6d3d1;
   }
 </style>
