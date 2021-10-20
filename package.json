@@ -16,6 +16,9 @@
     "snowpack": "^3.3.7"
   },
   "dependencies": {
+    "arquero": "^4.8.7",
+    "d3-scale": "^4.0.2",
+    "lodash": "^4.17.21",
     "ress": "^4.0.0",
     "svelte": "^3.43.0"
   }

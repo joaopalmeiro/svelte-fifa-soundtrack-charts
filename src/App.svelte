@@ -1,4 +1,5 @@
 <script>
+  import TeamedBarChart from './charts/TeamedBarChart.svelte';
   import Container from './components/Container.svelte';
   // More info:
   // - https://sveltesociety.dev/recipes/component-recipes/using-fetch-to-consume-apis
@@ -47,7 +48,7 @@
     <p>Loading data...</p>
   {:then data}
     <!-- <pre>{JSON.stringify(data, null, 2)}</pre> -->
-    <Container outline>card content</Container>
+    <Container outline><TeamedBarChart data={data.items} /></Container>
   {:catch error}
     <p style="color: crimson">{error.message}</p>
   {/await}

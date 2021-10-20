@@ -14,6 +14,9 @@ FIFA soundtrack visualizations built with Svelte.
 - [FIFA 20 Soundtrack](https://www.ea.com/news/fifa-20-soundtrack-volta-football?isLocalized=true) page.
 - [FIFA 21 Soundtrack](https://www.ea.com/en-gb/games/fifa/fifa-21/soundtrack) page.
 - [How to handle environment variables in Python](https://pybit.es/articles/how-to-handle-environment-variables-in-python/) blog post by Bob Belderbos.
+- _Teamed_ (or grouped) bar chart:
+  - [Lisa Charlotte Muth's tweet](https://twitter.com/lisacmuth/status/1442175586726780929/photo/2).
+  - [Wahlergebnisse : Alle Ergebnisse der Bundestagswahl 2021](https://www.zeit.de/politik/deutschland/2021-09/wahlergebnisse-bundestagswahl-2021-wahlkreise-karte-deutschland-live) by ZEIT ONLINE.
 
 ## Notes
 
