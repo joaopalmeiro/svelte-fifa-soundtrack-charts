@@ -1,0 +1,21 @@
+{
+  "name": "svelte-fifa-soundtrack-charts",
+  "description": "FIFA soundtrack visualizations built with Svelte.",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-svelte": "^3.7.0",
+    "prettier": "^2.4.1",
+    "prettier-plugin-svelte": "^2.4.0",
+    "snowpack": "^3.3.7"
+  },
+  "dependencies": {
+    "ress": "^4.0.0",
+    "svelte": "^3.43.0"
+  }
+}

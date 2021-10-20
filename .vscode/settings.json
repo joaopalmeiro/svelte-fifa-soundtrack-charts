@@ -1,0 +1,9 @@
+{
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "colorize.languages": ["javascript", "svelte"]
+}

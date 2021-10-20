@@ -2,6 +2,13 @@
 
 FIFA soundtrack visualizations built with Svelte.
 
+## Quickstart
+
+> Svelte
+
+- `npm install`.
+- `npm start`.
+
 ## References
 
 - [FIFA 20 Soundtrack](https://www.ea.com/news/fifa-20-soundtrack-volta-football?isLocalized=true) page.
